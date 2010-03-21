@@ -1,17 +1,13 @@
-package TestApp::Controller::Root;
+package TestApp::Controller::Foo;
 our $VERSION = '0.002';
 use Moose;
 use namespace::autoclean;
 
 BEGIN { extends 'Catalyst::Controller' }
 
-__PACKAGE__->config( namespace => '' );
-
-sub main :Path {
+sub bar :Local {
     my ($self, $c) = @_;
-    $c->stash( name => 'Dave' );
+    $c->stash( name => 'Foo Foo' );
 }
-
-sub end : ActionClass('RenderView') {}
 
 __PACKAGE__->meta->make_immutable;

@@ -20,4 +20,4 @@ requires:
   MooseX::Types: 0.21
   MooseX::Types::Common: 0.001
   namespace::autoclean: 0.09
-version: 0.001
+version: 0.002
