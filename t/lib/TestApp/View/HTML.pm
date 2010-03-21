@@ -1,5 +1,5 @@
 package TestApp::View::HTML;
-our $VERSION = '0.002';
+our $VERSION = '0.002001';
 use Moose;
 use namespace::autoclean;
 

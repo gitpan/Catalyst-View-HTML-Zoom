@@ -1,5 +1,5 @@
 package TestApp::View::HTML::Root;
-our $VERSION = '0.002';
+our $VERSION = '0.002001';
 use Moose;
 use Method::Signatures::Simple;
 

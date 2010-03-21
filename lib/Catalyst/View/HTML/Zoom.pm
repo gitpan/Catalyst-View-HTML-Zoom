@@ -1,5 +1,5 @@
 package Catalyst::View::HTML::Zoom;
-our $VERSION = '0.002';
+our $VERSION = '0.002001';
 # ABSTRACT: Catalyst view to HTML::Zoom
 use Moose;
 use HTML::Zoom;
@@ -59,7 +59,7 @@ Catalyst::View::HTML::Zoom - Catalyst view to HTML::Zoom
 
 =head1 VERSION
 
-version 0.002
+version 0.002001
 
 =head1 SYNOPSIS
 
