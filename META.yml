@@ -5,13 +5,14 @@ author:
 build_requires: {}
 configure_requires:
   ExtUtils::MakeMaker: 6.11
-generated_by: 'Dist::Zilla version 1.100651'
+generated_by: 'Dist::Zilla version 1.100711'
 license: perl
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
   version: 1.4
 name: Catalyst-View-HTML-Zoom
 requires:
+  Catalyst::Action::RenderView: 0.14
   Catalyst::Runtime: 5.8
   HTML::Zoom: 0.009
   Method::Signatures::Simple: 0.05
@@ -20,4 +21,4 @@ requires:
   MooseX::Types: 0.21
   MooseX::Types::Common: 0.001
   namespace::autoclean: 0.09
-version: 0.002001
+version: 0.002002

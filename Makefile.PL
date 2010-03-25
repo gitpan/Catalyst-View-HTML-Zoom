@@ -21,14 +21,15 @@ my %WriteMakefileArgs = (
                        'BUILD_REQUIRES' => {},
                        'ABSTRACT' => 'Catalyst view to HTML::Zoom',
                        'EXE_FILES' => [],
-                       'VERSION' => '0.002001',
+                       'VERSION' => '0.002002',
                        'PREREQ_PM' => {
                                         'namespace::autoclean' => '0.09',
                                         'Method::Signatures::Simple' => '0.05',
-                                        'MooseX::Types' => '0.21',
                                         'MooseX::Lexical::Types' => '0.01',
                                         'HTML::Zoom' => '0.009',
                                         'MooseX::Types::Common' => '0.001',
+                                        'Catalyst::Action::RenderView' => '0.14',
+                                        'MooseX::Types' => '0.21',
                                         'Catalyst::Runtime' => '5.8',
                                         'Moose' => '0.98'
                                       },

@@ -1,5 +1,5 @@
 package Catalyst::View::HTML::Zoom;
-our $VERSION = '0.002001';
+our $VERSION = '0.002002';
 # ABSTRACT: Catalyst view to HTML::Zoom
 use Moose;
 use HTML::Zoom;
@@ -59,7 +59,7 @@ Catalyst::View::HTML::Zoom - Catalyst view to HTML::Zoom
 
 =head1 VERSION
 
-version 0.002001
+version 0.002002
 
 =head1 SYNOPSIS
 
@@ -88,7 +88,7 @@ version 0.002001
 
 =head1 METHODS
 
-=head1 process
+=head2 process
 
 Renders the template specified in C<$c->stash->{template}> or C<$c->namespace/$c->action>
 (the private name of the matched action). Calls render to perform actual rendering.
