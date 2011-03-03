@@ -1,4 +1,4 @@
-package TestApp::View::HTML;
+package TestAppAltRoot::View::HTML;
 use Moose;
 use namespace::autoclean;
 

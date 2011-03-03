@@ -1,4 +1,4 @@
-package TestApp::View::HTML::Root;
+package TestAppAltRoot::View::HTML::Root;
 use Moose;
 
 sub main {

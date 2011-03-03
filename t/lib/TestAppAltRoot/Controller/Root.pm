@@ -1,4 +1,4 @@
-package TestApp::Controller::Root;
+package TestAppAltRoot::Controller::Root;
 use Moose;
 use namespace::autoclean;
 
@@ -31,18 +31,6 @@ sub name_zaction :Local {
       name => 'Dave',
       template => 'main',
       zoom_action => 'main',
-    );
-}
-
-sub inlined_action :Local {
-    my ($self, $c) = @_;
-    $c->stash(
-        name => 'John',
-        template => 'main',
-        zoom_do => sub {
-            my ($zoom, %args) = @_;
-            $zoom->select("#name")->replace_content($args{name});
-        },
     );
 }
  

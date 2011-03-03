@@ -1,7 +1,11 @@
 package TestApp::View::HTML::Foo;
-our $VERSION = '0.002002';
 use Moose;
 use namespace::autoclean;
+
+has test_arg => (
+    is => 'ro',
+    required => 1,
+);
 
 sub bar {
     my ($self, $stash) = @_;

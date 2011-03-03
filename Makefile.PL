@@ -4,41 +4,54 @@ use warnings;
 
 
 
-use ExtUtils::MakeMaker 6.11;
+use ExtUtils::MakeMaker 6.31;
 
 
 
 my %WriteMakefileArgs = (
-                       'test' => {
-                                   'TESTS' => 't/*.t'
-                                 },
-                       'NAME' => 'Catalyst::View::HTML::Zoom',
-                       'DISTNAME' => 'Catalyst-View-HTML-Zoom',
-                       'CONFIGURE_REQUIRES' => {
-                                                 'ExtUtils::MakeMaker' => '6.11'
-                                               },
-                       'AUTHOR' => 'Oliver Charles <oliver.g.charles@googlemail.com>',
-                       'BUILD_REQUIRES' => {},
-                       'ABSTRACT' => 'Catalyst view to HTML::Zoom',
-                       'EXE_FILES' => [],
-                       'VERSION' => '0.002002',
-                       'PREREQ_PM' => {
-                                        'namespace::autoclean' => '0.09',
-                                        'Method::Signatures::Simple' => '0.05',
-                                        'MooseX::Lexical::Types' => '0.01',
-                                        'HTML::Zoom' => '0.009',
-                                        'MooseX::Types::Common' => '0.001',
-                                        'Catalyst::Action::RenderView' => '0.14',
-                                        'MooseX::Types' => '0.21',
-                                        'Catalyst::Runtime' => '5.8',
-                                        'Moose' => '0.98'
-                                      },
-                       'LICENSE' => 'perl'
-                     );
+  'ABSTRACT' => 'Catalyst view to HTML::Zoom',
+  'AUTHOR' => 'Oliver Charles <oliver.g.charles@googlemail.com>',
+  'BUILD_REQUIRES' => {
+    'Catalyst::Action::RenderView' => '0.14',
+    'Catalyst::Runtime' => '5.8',
+    'Test::More' => '0.96'
+  },
+  'CONFIGURE_REQUIRES' => {
+    'ExtUtils::MakeMaker' => '6.31'
+  },
+  'DISTNAME' => 'Catalyst-View-HTML-Zoom',
+  'EXE_FILES' => [],
+  'LICENSE' => 'perl',
+  'NAME' => 'Catalyst::View::HTML::Zoom',
+  'PREREQ_PM' => {
+    'Class::MOP' => '1.12',
+    'HTML::Zoom' => '0.009',
+    'Moose' => '1.21',
+    'Path::Class' => '0.23',
+    'namespace::autoclean' => '0.09'
+  },
+  'VERSION' => '0.003',
+  'test' => {
+    'TESTS' => 't/*.t'
+  }
+);
 
 
-delete $WriteMakefileArgs{LICENSE}
-  unless eval { ExtUtils::MakeMaker->VERSION(6.31) };
+unless ( eval { ExtUtils::MakeMaker->VERSION(6.56) } ) {
+  my $br = delete $WriteMakefileArgs{BUILD_REQUIRES};
+  my $pp = $WriteMakefileArgs{PREREQ_PM};
+  for my $mod ( keys %$br ) {
+    if ( exists $pp->{$mod} ) {
+      $pp->{$mod} = $br->{$mod} if $br->{$mod} > $pp->{$mod};
+    }
+    else {
+      $pp->{$mod} = $br->{$mod};
+    }
+  }
+}
+
+delete $WriteMakefileArgs{CONFIGURE_REQUIRES}
+  unless eval { ExtUtils::MakeMaker->VERSION(6.52) };
 
 WriteMakefile(%WriteMakefileArgs);
 
